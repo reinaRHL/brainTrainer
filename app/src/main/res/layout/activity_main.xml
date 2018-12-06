@@ -20,19 +20,62 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="107dp"
+            android:layout_height="33dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:gravity="right"
+            android:text="0/0"
+            android:textColor="#0e1025"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="107dp"
+            android:layout_height="33dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="left"
+            android:text="30 s"
+            android:textColor="#462c4a"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="185dp"
+            android:layout_height="58dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="45dp"
+            android:text="Questions here!"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
 
         <android.support.v7.widget.GridLayout
             android:layout_width="match_parent"
-            android:layout_height="208dp"
-            android:layout_alignParentBottom="true"
+            android:layout_height="286dp"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="125dp">
+            android:layout_below="@+id/questionTextView">
 
             <Button
                 android:id="@+id/choice1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/choice1"
+                android:textColor="@android:color/white"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
@@ -43,6 +86,8 @@
                 android:id="@+id/choice2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/choice2"
+                android:textColor="@android:color/white"
                 app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
@@ -53,6 +98,8 @@
                 android:id="@+id/choice3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/choice3"
+                android:textColor="@android:color/white"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
@@ -63,6 +110,8 @@
                 android:id="@+id/choice4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/choice4"
+                android:textColor="@android:color/white"
                 app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
@@ -71,30 +120,6 @@
 
         </android.support.v7.widget.GridLayout>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="107dp"
-            android:layout_height="33dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:text="0/0" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="102dp"
-            android:layout_height="32dp"
-            android:layout_alignEnd="@+id/null"
-            android:layout_alignTop="@+id/null"
-            android:text="30 s" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="185dp"
-            android:layout_height="58dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="87dp"
-            android:text="Questions here!" />
 
         <TextView
             android:id="@+id/textView5"
@@ -103,7 +128,10 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="26dp"
-            android:text="Result here!" />
+            android:gravity="center"
+            android:text="Result here!"
+            android:textColor="@color/acct"
+            android:textStyle="bold" />
 
     </android.widget.RelativeLayout>
 </android.widget.RelativeLayout>

@@ -9,12 +9,14 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/startBtn"
+        android:layout_width="137dp"
+        android:layout_height="85dp"
         android:layout_centerInParent="true"
+        android:background="@color/acct"
+        android:onClick="playGame"
         android:text="Play!"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     <android.widget.RelativeLayout
         android:layout_width="match_parent"
@@ -77,11 +79,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/choice1"
+                android:onClick="answerChosen"
                 android:textColor="@android:color/white"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
                 app:layout_row="0"
+                android:tag="0"
                 app:layout_rowWeight="1" />
 
             <Button
@@ -89,11 +93,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/choice2"
+                android:onClick="answerChosen"
                 android:textColor="@android:color/white"
                 app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
                 app:layout_row="0"
+                android:tag="1"
                 app:layout_rowWeight="1" />
 
             <Button
@@ -101,11 +107,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/choice3"
+                android:onClick="answerChosen"
                 android:textColor="@android:color/white"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
                 app:layout_row="1"
+                android:tag="2"
                 app:layout_rowWeight="1" />
 
             <Button
@@ -113,11 +121,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/choice4"
+                android:onClick="answerChosen"
                 android:textColor="@android:color/white"
                 app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
                 app:layout_row="1"
+                android:tag="3"
                 app:layout_rowWeight="1" />
 
         </android.support.v7.widget.GridLayout>

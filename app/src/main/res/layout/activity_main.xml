@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:background="#FFF3F6F7"
     tools:context=".MainActivity">
 
     <Button
@@ -32,8 +32,8 @@
             android:layout_alignParentTop="true"
             android:gravity="right"
             android:text="0/0"
-            android:textColor="#0e1025"
-            android:textSize="18sp"
+            android:textColor="#303035"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
@@ -45,21 +45,23 @@
             android:layout_alignParentTop="true"
             android:gravity="left"
             android:text="30 s"
-            android:textColor="#462c4a"
-            android:textSize="18sp"
+            android:textColor="#303035"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/questionTextView"
-            android:layout_width="185dp"
-            android:layout_height="58dp"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="45dp"
-            android:text="Questions here!"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="51dp"
+            android:background="@color/acct"
             android:gravity="center"
-            android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:text="Questions here!"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
 
@@ -129,8 +131,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="26dp"
             android:gravity="center"
-            android:text="Result here!"
-            android:textColor="@color/acct"
+            android:text="Correct!"
+            android:textColor="#303035"
+            android:textSize="21sp"
             android:textStyle="bold" />
 
     </android.widget.RelativeLayout>

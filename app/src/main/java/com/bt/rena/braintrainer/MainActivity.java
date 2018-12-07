@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     Button btn3;
     Button btn4;
     Button startBtn;
+    TextView questionText;
+    RelativeLayout inGameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,21 +27,25 @@ public class MainActivity extends AppCompatActivity {
         btn2 = findViewById(R.id.choice2);
         btn3 = findViewById(R.id.choice3);
         btn4 = findViewById(R.id.choice4);
-
+        questionText = findViewById(R.id.questionTextView);
+        inGameLayout = findViewById(R.id.inGame);
     }
 
-    public void playGame(){
+    public void playGame(View view){
         startBtn.setVisibility(View.INVISIBLE);
+        inGameLayout.setVisibility(View.VISIBLE);
         getQuestion();
     }
 
     public void getQuestion(){
 
         //generate random question
+        questionText.setText("test");
         //calculate the answer
         //generate random answers
         //put it in the list
         //display
+
 
         //add timer here 30s
         //on tick- update timer display

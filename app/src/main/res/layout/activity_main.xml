@@ -22,7 +22,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="43dp"
             android:onClick="playGame"
-            android:text="Play Again" />
+            android:text="Play Again"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/finalResultTextView"
@@ -30,7 +31,8 @@
             android:layout_height="82dp"
             android:layout_centerInParent="true"
             android:gravity="center_horizontal"
-            android:text="TextView" />
+            android:text="TextView"
+            android:textSize="24sp" />
     </RelativeLayout>
 
     <Button
@@ -109,6 +111,7 @@
                 android:onClick="answerChosen"
                 android:tag="0"
                 android:textColor="@android:color/white"
+                android:textSize="24sp"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
@@ -123,6 +126,7 @@
                 android:onClick="answerChosen"
                 android:tag="1"
                 android:textColor="@android:color/white"
+                android:textSize="24sp"
                 app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
@@ -137,6 +141,7 @@
                 android:onClick="answerChosen"
                 android:tag="2"
                 android:textColor="@android:color/white"
+                android:textSize="24sp"
                 app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"
@@ -151,6 +156,7 @@
                 android:onClick="answerChosen"
                 android:tag="3"
                 android:textColor="@android:color/white"
+                android:textSize="24sp"
                 app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_gravity="fill"

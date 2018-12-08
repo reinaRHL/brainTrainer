@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // get necessary objects from the view
         startBtn = findViewById(R.id.startBtn);
         btn1 = findViewById(R.id.choice1);
         btn2 = findViewById(R.id.choice2);
@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         resultView = findViewById(R.id.resultTextView);
         timeView = findViewById(R.id.timeTextView);
         finalResultTextView = findViewById(R.id.finalResultTextView);
+        resultLayout.setVisibility(View.INVISIBLE);
+        inGameLayout.setVisibility(View.INVISIBLE);
     }
 
     public void playGame(View view){

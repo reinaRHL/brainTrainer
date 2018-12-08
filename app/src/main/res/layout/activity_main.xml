@@ -128,7 +128,7 @@
 
         <TextView
             android:id="@+id/resultTextView"
-            android:layout_width="51dp"
+            android:layout_width="65dp"
             android:layout_height="33dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"

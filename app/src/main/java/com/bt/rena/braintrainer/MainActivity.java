@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         int n1 = rand.nextInt(10);
         int n2 = rand.nextInt(10);
         int n3 = rand.nextInt(25);
-        int n4 = rand.nextInt(25);
+        int n4 = rand.nextInt(25) + 24;
         answerLocation = rand.nextInt(3);
 
         //answer for addition
@@ -128,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
             answer = n3 + n4;
             questionText.setText(Integer.toString(n3) + " + " + Integer.toString(n4) + " = ?");
         } else if (level.equals("3")) {
-            answer = n3 - n2;
-            questionText.setText(Integer.toString(n3) + " - " + Integer.toString(n2) + " = ?");
+            answer = n4 - n3;
+            questionText.setText(Integer.toString(n4) + " - " + Integer.toString(n3) + " = ?");
         } else {
             answer = n3 + n4 - n2;
             questionText.setText(Integer.toString(n3) + " + " + Integer.toString(n4) + " - " + Integer.toString(n2) + " = ?");

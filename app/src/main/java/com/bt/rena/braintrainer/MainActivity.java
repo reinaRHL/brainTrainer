@@ -19,10 +19,13 @@ public class MainActivity extends AppCompatActivity {
     Button btn3;
     Button btn4;
     Button startBtn;
+    Button playAgainBtn;
     TextView questionText;
     TextView resultView;
     TextView timeView;
+    TextView finalResultTextView;
     RelativeLayout inGameLayout;
+    RelativeLayout resultLayout;
     Toast toastMsg;
     int answerLocation;
     int totalScore = 0;
@@ -41,20 +44,24 @@ public class MainActivity extends AppCompatActivity {
         btn2 = findViewById(R.id.choice2);
         btn3 = findViewById(R.id.choice3);
         btn4 = findViewById(R.id.choice4);
+        playAgainBtn = findViewById(R.id.playAgainBtn);
         questionText = findViewById(R.id.questionTextView);
         inGameLayout = findViewById(R.id.inGame);
+        resultLayout = findViewById(R.id.resultLayout);
         resultView = findViewById(R.id.resultTextView);
         timeView = findViewById(R.id.timeTextView);
+        finalResultTextView = findViewById(R.id.finalResultTextView);
     }
 
     public void playGame(View view){
 
-        //hide start button
+        //hide start button, playagain btn, and resultLayout
         startBtn.setVisibility(View.INVISIBLE);
+        resultLayout.setVisibility(View.INVISIBLE);
 
         //show game display
         inGameLayout.setVisibility(View.VISIBLE);
-
+        resultView.setText("0/0");
         //add timer here 30s
         new CountDownTimer(30100, 1000) {
 
@@ -67,8 +74,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 timeView.setText("0s");
+                inGameLayout.setVisibility(View.INVISIBLE);
+                resultLayout.setVisibility(View.VISIBLE);
+                finalResultTextView.setText(Integer.toString(totalScore) + "/" + Integer.toString(numQuestions));
+                totalScore = 0;
+                numQuestions =0;
 
-                //on finish- reset all the value, display the result update timer to "" , make 'play again button' visible
             }
         }.start();
 

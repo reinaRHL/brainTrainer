@@ -1,5 +1,6 @@
 package com.bt.rena.braintrainer;
 
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,7 +55,25 @@ public class MainActivity extends AppCompatActivity {
         //show game display
         inGameLayout.setVisibility(View.VISIBLE);
 
+        //add timer here 30s
+        new CountDownTimer(30100, 1000) {
+
+
+            @Override
+            public void onTick(long l) {
+                timeView.setText(Long.toString(l/1000) + "s");
+            }
+
+            @Override
+            public void onFinish() {
+                timeView.setText("0s");
+
+                //on finish- reset all the value, display the result update timer to "" , make 'play again button' visible
+            }
+        }.start();
+
         getQuestion();
+
     }
 
     public void getQuestion(){
@@ -96,10 +115,6 @@ public class MainActivity extends AppCompatActivity {
         btn3.setText(Integer.toString(answerList.get(2)));
         btn4.setText(Integer.toString(answerList.get(3)));
 
-
-        //add timer here 30s
-        //on tick- update timer display
-        //on finish- reset all the value, display the result update timer to "" , make 'play again button' visible
     }
 
     public void answerChosen(View view){

@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 if (toastMsg!=null){
                     toastMsg.cancel();
                 }
-                finalResultTextView.setText("Score: "+ Integer.toString(totalScore) + "/" + Integer.toString(numQuestions));
+                finalResultTextView.setText("Score\n"+ Integer.toString(totalScore) + "/" + Integer.toString(numQuestions));
                 totalScore = 0;
                 numQuestions =0;
 

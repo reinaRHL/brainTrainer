@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
     Button btn2;
     Button btn3;
     Button btn4;
-    Button addBtn;
-    Button subBtn;
-    Button multiBtn;
-    Button divBtn;
+    Button level1Btn;
+    Button level2Btn;
+    Button level3Btn;
+    Button level4Btn;
     Button playAgainBtn;
     TextView questionText;
     TextView resultView;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     int answerLocation;
     int totalScore = 0;
     int numQuestions = 0;
-    String mathType = "";
+    String level = "";
 
 
     @Override
@@ -43,15 +43,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // get necessary objects from the view
-        addBtn = findViewById(R.id.addBtn);
-        subBtn = findViewById(R.id.subBtn);
-        multiBtn = findViewById(R.id.multiBtn);
-        divBtn = findViewById(R.id.divBtn);
+        level1Btn = findViewById(R.id.level1);
+        level2Btn = findViewById(R.id.level2);
+        level3Btn = findViewById(R.id.level3);
+        level4Btn = findViewById(R.id.level4);
         btn1 = findViewById(R.id.choice1);
         btn2 = findViewById(R.id.choice2);
         btn3 = findViewById(R.id.choice3);
         btn4 = findViewById(R.id.choice4);
-        playAgainBtn = findViewById(R.id.playAgainBtn);
+        playAgainBtn = findViewById(R.id.playAgain);
         questionText = findViewById(R.id.questionTextView);
         inGameLayout = findViewById(R.id.inGame);
         resultLayout = findViewById(R.id.resultLayout);
@@ -63,11 +63,17 @@ public class MainActivity extends AppCompatActivity {
         inGameLayout.setVisibility(View.INVISIBLE);
     }
 
+    public void playAgain(View view){
+        // makes firstLayout visible and hide others
+        resultLayout.setVisibility(View.INVISIBLE);
+        firstLayout.setVisibility(View.VISIBLE);
+    }
+
     public void playGame(View view){
 
         //hide start button, playagain btn, and resultLayout
         firstLayout.setVisibility(View.INVISIBLE);
-        resultLayout.setVisibility(View.INVISIBLE);
+        //resultLayout.setVisibility(View.INVISIBLE);
 
         //show game display
         inGameLayout.setVisibility(View.VISIBLE);
@@ -95,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }.start();
-        mathType = view.getTag().toString();
+        level = view.getTag().toString();
         getQuestion();
 
     }
@@ -106,25 +112,27 @@ public class MainActivity extends AppCompatActivity {
         Random rand = new Random();
 
         // random number between 0~24
-        int n1 = rand.nextInt(25);
-        int n2 = rand.nextInt(25);
+        int n1 = rand.nextInt(10);
+        int n2 = rand.nextInt(10);
+        int n3 = rand.nextInt(25);
+        int n4 = rand.nextInt(25);
         answerLocation = rand.nextInt(3);
 
         //answer for addition
         int answer;
 
-        if (mathType.equals("addition")){
+        if (level.equals("1")){
             answer = n1 + n2;
             questionText.setText(Integer.toString(n1) + " + " + Integer.toString(n2) + " = ?");
-        } else if (mathType.equals("subtraction")){
-            answer = n1 - n2;
-            questionText.setText(Integer.toString(n1) + " - " + Integer.toString(n2) + " = ?");
-        } else if (mathType.equals("multiplication")) {
-            answer = n1 * n2;
-            questionText.setText(Integer.toString(n1) + " * " + Integer.toString(n2) + " = ?");
+        } else if (level.equals("2")){
+            answer = n3 + n4;
+            questionText.setText(Integer.toString(n3) + " + " + Integer.toString(n4) + " = ?");
+        } else if (level.equals("3")) {
+            answer = n3 - n2;
+            questionText.setText(Integer.toString(n3) + " - " + Integer.toString(n2) + " = ?");
         } else {
-            answer = n1/ n2;
-            questionText.setText(Integer.toString(n1) + " / " + Integer.toString(n2) + " = ?");
+            answer = n3 + n4 - n2;
+            questionText.setText(Integer.toString(n3) + " + " + Integer.toString(n4) + " - " + Integer.toString(n2) + " = ?");
         }
 
         ArrayList<Integer> answerList = new ArrayList<>();

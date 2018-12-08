@@ -18,8 +18,14 @@ public class MainActivity extends AppCompatActivity {
     Button btn4;
     Button startBtn;
     TextView questionText;
+    TextView instantResult;
+    TextView resultView;
+    TextView timeView;
     RelativeLayout inGameLayout;
     int answerLocation;
+    int totalScore = 0;
+    int numQuestions = 0;
+
 
 
     @Override
@@ -35,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         btn4 = findViewById(R.id.choice4);
         questionText = findViewById(R.id.questionTextView);
         inGameLayout = findViewById(R.id.inGame);
+        instantResult = findViewById(R.id.instantResult);
+        resultView = findViewById(R.id.resultTextView);
+        timeView = findViewById(R.id.timeTextView);
     }
 
     public void playGame(View view){
@@ -50,21 +59,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void getQuestion(){
 
-        //generate random numbers for question
+
+        //instantResult.setText("");
+
+        // generate random numbers to make a question
         Random rand = new Random();
 
         // random number between 0~24
         int n1 = rand.nextInt(25);
         int n2 = rand.nextInt(25);
         answerLocation = rand.nextInt(3);
+
+        //answer for addition
         int answer = n1 + n2;
 
+        // display random question to the screen
         questionText.setText(Integer.toString(n1) + "+" + Integer.toString(n2));
 
         ArrayList<Integer> answerList = new ArrayList<>();
 
         //generate random answers
-        for (int i=0; i<4; i++){
+        for (int i = 0; i < 4; i++){
             if (i != answerLocation){
                 int wrongAnswer = rand.nextInt(60);
                 while (wrongAnswer == answer){
@@ -73,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             answerList.add(i, wrongAnswer);
             }
             else{
+                // correct answer
                 answerList.add(answerLocation, answer);
             }
         }
@@ -92,11 +108,17 @@ public class MainActivity extends AppCompatActivity {
     public void answerChosen(View view){
         //check if selected answer is correct
 
-        //if correct: add score, display 'correct'
-        //if not: display 'wrong!"
+        int selected = Integer.parseInt(view.getTag().toString());
+        if (selected == answerLocation) {
+            instantResult.setText("Correct!");
+            totalScore++;
+        }
+        else{
+            instantResult.setText("Wrong!");
+        }
+        numQuestions++;
 
-        //for both cases, number of question increses
-        // next question should be generated
+        resultView.setText(Integer.toString(totalScore) + "/" + Integer.toString(numQuestions));
 
         getQuestion();
     }

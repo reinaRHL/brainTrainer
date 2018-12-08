@@ -29,7 +29,7 @@
         android:layout_alignParentTop="true">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/resultTextView"
             android:layout_width="107dp"
             android:layout_height="33dp"
             android:layout_alignParentEnd="true"
@@ -42,7 +42,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/timeTextView"
             android:layout_width="107dp"
             android:layout_height="33dp"
             android:layout_alignParentLeft="true"
@@ -136,7 +136,7 @@
 
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/instantResult"
             android:layout_width="124dp"
             android:layout_height="59dp"
             android:layout_alignParentBottom="true"

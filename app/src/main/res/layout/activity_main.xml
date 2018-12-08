@@ -18,21 +18,65 @@
             android:id="@+id/brainImg"
             android:layout_width="243dp"
             android:layout_height="267dp"
+            android:layout_above="@+id/addBtn"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             app:srcCompat="@drawable/brain" />
 
         <Button
-            android:id="@+id/startBtn"
-            android:layout_width="139dp"
+            android:id="@+id/addBtn"
+            android:layout_width="173dp"
             android:layout_height="53dp"
-            android:layout_below="@+id/brainImg"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@color/acct"
+            android:onClick="playGame"
+            android:tag="addition"
+            android:text="Addition"
+            android:textColor="#303035"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/subBtn"
+            android:layout_width="173dp"
+            android:layout_height="53dp"
+            android:layout_below="@+id/addBtn"
             android:layout_centerHorizontal="true"
             android:background="@color/acct"
             android:onClick="playGame"
-            android:text="Play!"
+            android:tag="subtraction"
+            android:layout_marginTop="1dp"
+            android:text="Subtraction"
             android:textColor="#303035"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/multiBtn"
+            android:layout_width="173dp"
+            android:layout_height="53dp"
+            android:layout_below="@+id/subBtn"
+            android:layout_centerHorizontal="true"
+            android:background="@color/acct"
+            android:onClick="playGame"
+            android:tag="multiplication"
+            android:layout_marginTop="2dp"
+            android:text="Multiplication"
+            android:textColor="#303035"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/divBtn"
+            android:layout_width="173dp"
+            android:layout_height="53dp"
+            android:layout_below="@+id/multiBtn"
+            android:layout_centerHorizontal="true"
+            android:background="@color/acct"
+            android:onClick="playGame"
+            android:tag="division"
+            android:layout_marginTop="2dp"
+            android:text="Division"
+            android:textColor="#303035"
+            android:textSize="22sp" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -64,7 +108,7 @@
             android:layout_height="82dp"
             android:layout_centerInParent="true"
             android:gravity="center_horizontal"
-            android:text="TextView"
+            android:textColor="@android:color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -146,7 +190,7 @@
 
         <android.support.v7.widget.GridLayout
             android:layout_width="match_parent"
-            android:layout_height="286dp"
+            android:layout_height="400dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/questionTextView">

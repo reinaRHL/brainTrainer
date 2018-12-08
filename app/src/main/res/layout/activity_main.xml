@@ -12,18 +12,27 @@
         android:id="@+id/resultLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="2dp"
         android:visibility="visible">
 
         <Button
             android:id="@+id/playAgainBtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="88dp"
             android:layout_alignParentBottom="true"
+            android:layout_below="@id/finalResultTextView"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="43dp"
+            android:layout_marginBottom="300dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/acct"
             android:onClick="playGame"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:text="Play Again"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/finalResultTextView"
@@ -32,7 +41,8 @@
             android:layout_centerInParent="true"
             android:gravity="center_horizontal"
             android:text="TextView"
-            android:textSize="24sp" />
+            android:textSize="28sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
     <Button
@@ -62,6 +72,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="5dp"
             android:gravity="right"
             android:text="0/0"
             android:textColor="#303035"
@@ -75,6 +87,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
             android:gravity="left"
             android:text="30 s"
             android:textColor="#303035"
@@ -84,7 +98,7 @@
         <TextView
             android:id="@+id/questionTextView"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
+            android:layout_height="68dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="2dp"

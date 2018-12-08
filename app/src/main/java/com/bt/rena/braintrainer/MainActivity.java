@@ -78,7 +78,10 @@ public class MainActivity extends AppCompatActivity {
                 timeView.setText("0s");
                 inGameLayout.setVisibility(View.INVISIBLE);
                 resultLayout.setVisibility(View.VISIBLE);
-                finalResultTextView.setText(Integer.toString(totalScore) + "/" + Integer.toString(numQuestions));
+                if (toastMsg!=null){
+                    toastMsg.cancel();
+                }
+                finalResultTextView.setText("Score: "+ Integer.toString(totalScore) + "/" + Integer.toString(numQuestions));
                 totalScore = 0;
                 numQuestions =0;
 
@@ -103,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         int answer = n1 + n2;
 
         // display random question to the screen
-        questionText.setText(Integer.toString(n1) + "+" + Integer.toString(n2));
+        questionText.setText(Integer.toString(n1) + " + " + Integer.toString(n2) + " = ?");
 
         ArrayList<Integer> answerList = new ArrayList<>();
 

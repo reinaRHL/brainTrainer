@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     Button btn1;
@@ -16,11 +19,14 @@ public class MainActivity extends AppCompatActivity {
     Button startBtn;
     TextView questionText;
     RelativeLayout inGameLayout;
+    int answerLocation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         startBtn = findViewById(R.id.startBtn);
         btn1 = findViewById(R.id.choice1);
@@ -32,19 +38,50 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playGame(View view){
+
+        //hide start button
         startBtn.setVisibility(View.INVISIBLE);
+
+        //show game display
         inGameLayout.setVisibility(View.VISIBLE);
+
         getQuestion();
     }
 
     public void getQuestion(){
 
-        //generate random question
-        questionText.setText("test");
-        //calculate the answer
+        //generate random numbers for question
+        Random rand = new Random();
+
+        // random number between 0~24
+        int n1 = rand.nextInt(25);
+        int n2 = rand.nextInt(25);
+        answerLocation = rand.nextInt(3);
+        int answer = n1 + n2;
+
+        questionText.setText(Integer.toString(n1) + "+" + Integer.toString(n2));
+
+        ArrayList<Integer> answerList = new ArrayList<>();
+
         //generate random answers
-        //put it in the list
-        //display
+        for (int i=0; i<4; i++){
+            if (i != answerLocation){
+                int wrongAnswer = rand.nextInt(60);
+                while (wrongAnswer == answer){
+                    wrongAnswer = rand.nextInt(60);
+                }
+            answerList.add(i, wrongAnswer);
+            }
+            else{
+                answerList.add(answerLocation, answer);
+            }
+        }
+
+        //display buttons
+        btn1.setText(Integer.toString(answerList.get(0)));
+        btn2.setText(Integer.toString(answerList.get(1)));
+        btn3.setText(Integer.toString(answerList.get(2)));
+        btn4.setText(Integer.toString(answerList.get(3)));
 
 
         //add timer here 30s
@@ -53,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void answerChosen(View view){
-        //check if selected answer is correc
+        //check if selected answer is correct
 
         //if correct: add score, display 'correct'
         //if not: display 'wrong!"

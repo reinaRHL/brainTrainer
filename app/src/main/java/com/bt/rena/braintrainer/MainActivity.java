@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,10 +19,10 @@ public class MainActivity extends AppCompatActivity {
     Button btn4;
     Button startBtn;
     TextView questionText;
-    TextView instantResult;
     TextView resultView;
     TextView timeView;
     RelativeLayout inGameLayout;
+    Toast toastMsg;
     int answerLocation;
     int totalScore = 0;
     int numQuestions = 0;
@@ -41,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         btn4 = findViewById(R.id.choice4);
         questionText = findViewById(R.id.questionTextView);
         inGameLayout = findViewById(R.id.inGame);
-        instantResult = findViewById(R.id.instantResult);
         resultView = findViewById(R.id.resultTextView);
         timeView = findViewById(R.id.timeTextView);
     }
@@ -58,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getQuestion(){
-
-
-        //instantResult.setText("");
 
         // generate random numbers to make a question
         Random rand = new Random();
@@ -106,18 +103,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void answerChosen(View view){
-        //check if selected answer is correct
 
+        numQuestions++;
+
+        //check if selected answer is correct
         int selected = Integer.parseInt(view.getTag().toString());
         if (selected == answerLocation) {
-            instantResult.setText("Correct!");
+            toastMsg = Toast.makeText(this,"Correct!", Toast.LENGTH_SHORT);
             totalScore++;
         }
         else{
-            instantResult.setText("Wrong!");
+            toastMsg = Toast.makeText(this,"Wrong!", Toast.LENGTH_SHORT);
         }
-        numQuestions++;
-
+        toastMsg.show();
         resultView.setText(Integer.toString(totalScore) + "/" + Integer.toString(numQuestions));
 
         getQuestion();

@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     TextView finalResultTextView;
     RelativeLayout inGameLayout;
     RelativeLayout resultLayout;
+    RelativeLayout firstLayout;
     Toast toastMsg;
     int answerLocation;
     int totalScore = 0;
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         questionText = findViewById(R.id.questionTextView);
         inGameLayout = findViewById(R.id.inGame);
         resultLayout = findViewById(R.id.resultLayout);
+        firstLayout = findViewById(R.id.firstLayout);
         resultView = findViewById(R.id.resultTextView);
         timeView = findViewById(R.id.timeTextView);
         finalResultTextView = findViewById(R.id.finalResultTextView);
@@ -58,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     public void playGame(View view){
 
         //hide start button, playagain btn, and resultLayout
-        startBtn.setVisibility(View.INVISIBLE);
+        firstLayout.setVisibility(View.INVISIBLE);
         resultLayout.setVisibility(View.INVISIBLE);
 
         //show game display

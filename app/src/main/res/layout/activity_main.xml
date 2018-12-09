@@ -88,6 +88,15 @@
         android:layout_alignParentTop="true"
         android:visibility="invisible">
 
+        <ImageView
+            android:id="@+id/calcImg"
+            android:layout_width="78dp"
+            android:layout_height="64dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/finalResultTextView"
+            android:layout_toStartOf="@+id/finalResultTextView"
+            app:srcCompat="@drawable/calculator" />
+
         <Button
             android:id="@+id/shareBtn"
             android:layout_width="173dp"
@@ -119,7 +128,7 @@
 
         <TextView
             android:id="@+id/finalResultTextView"
-            android:layout_width="141dp"
+            android:layout_width="wrap_content"
             android:layout_height="82dp"
             android:layout_centerHorizontal="true"
             android:layout_centerInParent="true"

@@ -89,6 +89,20 @@
         android:visibility="invisible">
 
         <Button
+            android:id="@+id/shareBtn"
+            android:layout_width="173dp"
+            android:layout_height="53dp"
+            android:layout_below="@id/playAgain"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:background="@color/acct"
+            android:onClick="share"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="Share"
+            android:textSize="22sp" />
+
+        <Button
             android:id="@+id/playAgain"
             android:layout_width="173dp"
             android:layout_height="53dp"
@@ -99,7 +113,7 @@
             android:onClick="playAgain"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:tag="1"
+
             android:text="Play Again"
             android:textSize="22sp" />
 

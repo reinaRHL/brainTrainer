@@ -1,5 +1,6 @@
 package com.bt.rena.braintrainer;
 
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void playGame(View view){
+        totalScore = 0;
+        numQuestions =0;
 
         //hide start button, playagain btn, and resultLayout
         firstLayout.setVisibility(View.INVISIBLE);
@@ -96,14 +99,20 @@ public class MainActivity extends AppCompatActivity {
                     toastMsg.cancel();
                 }
                 finalResultTextView.setText("Score\n"+ Integer.toString(totalScore) + "/" + Integer.toString(numQuestions));
-                totalScore = 0;
-                numQuestions =0;
 
             }
         }.start();
         level = view.getTag().toString();
         getQuestion();
 
+    }
+
+    public void share(View view){
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT,"body");
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 
     public void getQuestion(){

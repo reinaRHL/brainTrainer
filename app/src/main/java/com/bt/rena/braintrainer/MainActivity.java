@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
     public void share(View view){
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
-        sendIntent.putExtra(Intent.EXTRA_TEXT,"body");
+        sendIntent.putExtra(Intent.EXTRA_TEXT,"I got " + Integer.toString(totalScore) + "/" + Integer.toString(numQuestions) + " at level " + level);
         sendIntent.setType("text/plain");
         startActivity(sendIntent);
     }
